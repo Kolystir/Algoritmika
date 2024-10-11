@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Добавление элементов в список</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Добавление элементов в список</h1>
+        <form id="itemForm">
+            <div class="form-group">
+                <label for="itemInput">Введите элемент:</label>
+                <input type="text" id="itemInput" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Добавить элемент</button>
+        </form>
+
+        <h3 class="mt-4">Список элементов:</h3>
+        <ul id="itemList" class="list-group"></ul>
+    </div>
+
+    <script>
+        document.getElementById('itemForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const itemValue = document.getElementById('itemInput').value;
+            const li = document.createElement('li');
+            li.className = 'list-group-item';
+            li.textContent = itemValue;
+            document.getElementById('itemList').appendChild(li);
+            document.getElementById('itemInput').value = '';
+        });
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

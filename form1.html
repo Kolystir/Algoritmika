@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сложение и Вычитание</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Сложение и Вычитание</h1>
+        <form id="calcForm">
+            <div class="form-group">
+                <label for="number1">Первое число:</label>
+                <input type="number" id="number1" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="number2">Второе число:</label>
+                <input type="number" id="number2" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Вычислить</button>
+        </form>
+
+        <h3 class="mt-4">Результаты:</h3>
+        <p id="sumResult"></p>
+        <p id="differenceResult"></p>
+    </div>
+
+    <script>
+        document.getElementById('calcForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const num1 = parseFloat(document.getElementById('number1').value);
+            const num2 = parseFloat(document.getElementById('number2').value);
+            const sum = num1 + num2;
+            const difference = num1 - num2;
+            document.getElementById('sumResult').innerText = `Сумма ${num1} + ${num2} = ${sum}`;
+            document.getElementById('differenceResult').innerText = `Разность ${num1} - ${num2} = ${difference}`;
+        });
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
